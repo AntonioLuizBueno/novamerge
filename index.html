@@ -1,0 +1,73 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Audio API - Sintetizador Simples</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Trabalhando com Web Audio API</h1>
+        <p>Criando e manipulando som diretamente no navegador.</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#sintetizador">Sintetizador</a></li>
+            <li><a href="#conceitos">Conceitos</a></li>
+        </ul>
+    </nav>
+
+    <main id="sintetizador">
+        <h2>Sintetizador Básico</h2>
+        <p>Clique e segure o botão "Tocar Tom" para ouvir uma onda senoidal gerada pelo JavaScript.</p>
+
+        <div class="controls-container">
+            <button id="playButton" aria-label="Tocar Tom">Tocar Tom</button>
+
+            <div class="slider-group">
+                <label for="volumeSlider">Volume:</label>
+                <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="0.5"
+                    aria-label="Controle de Volume">
+                <span id="volumeValue">50%</span>
+            </div>
+
+            <div class="slider-group">
+                <label for="waveType">Tipo de Onda:</label>
+                <select id="waveType">
+                    <option value="sine">Senoidal (Sine)</option>
+                    <option value="square">Quadrada (Square)</option>
+                    <option value="sawtooth">Dente de Serra (Sawtooth)</option>
+                    <option value="triangle">Triangular (Triangle)</option>
+                </select>
+            </div>
+        </div>
+
+        <p class="status-message" id="audioStatus">O áudio está inativo.</p>
+    </main>
+
+    <section id="conceitos">
+        <h3>Conceitos da Web Audio API</h3>
+        <p>A Web Audio API utiliza um **Grafo de Áudio** que é composto por **Nós (Nodes)** conectados:</p>
+        <ul>
+            <li>**`AudioContext`**: O contêiner de áudio principal, onde todos os nós vivem.</li>
+            <li>**`OscillatorNode`**: A fonte de som, que gera ondas sonoras (neste exemplo).</li>
+            <li>**`GainNode`**: Um nó de processamento que controla o volume (ganho).</li>
+            <li>**`context.destination`**: O destino final, geralmente os alto-falantes do seu dispositivo.</li>
+        </ul>
+    </section>
+
+    <footer id="contact">
+        <p>&copy; 2025 Projeto Web Audio. Desenvolvido com HTML, CSS e JavaScript (Web Audio API).</p>
+        <p>Experimente as diferentes formas de onda!</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
